@@ -1,0 +1,461 @@
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+
+.root{
+    --intro: 8s;
+}
+.game_page {
+    overflow-y: auto;
+    background-image: url('../../assets/table.png');
+    background-size: cover;
+}
+
+.title{
+    color: white;
+    margin-top: -25px;
+   font-size: 60px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
+.menu {
+    color: #5c36cf;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.table {
+    z-index: 0;
+}
+
+.table_elements {
+    /* z-index: 5;
+    position: absolute; */
+    width: 100%;
+}
+
+.placeholder {
+    border: 2px dotted white;
+    border-radius: 5px;
+    width: 80px;
+    height: 130px;
+    opacity: .5;
+}
+
+.draw_mat{
+    /* background-color: crimson; */
+    background-image: url('../../assets/mat.png');
+    background-size: 100% 100%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.opponent{
+    background-color: rgb(80, 3, 3);
+    border-radius: 10px;
+    width: 180px;
+    height: 65px;
+    padding: 5px;
+    opacity: 70%;
+}
+
+.opponent_text{
+    margin-top: -10px;
+    color: white;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 10;
+}
+
+.score{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    margin-top: -10px;
+   font-size: 40px;
+    color: white;
+}
+
+.flag{
+    margin-left: 20px;
+    animation: wither 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.flag:hover {
+    animation: bloom 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bloom {
+    0% {width: 60px}
+    100% {width: 70px}
+}
+
+@keyframes wither {
+    0% {
+        width: 70px
+    }
+
+    100% {
+        width: 60px
+    }
+}
+
+
+/*---------------- WIN SCREEN STYLING -------------*/
+
+.win_title{
+    font-family: 'Franklin Gothic Light', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    text-align: center;
+    margin-top: -25px;
+}
+
+.win_snark{
+    font-family: 'Franklin Gothic Light', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: "Brush Script MT", cursive; */
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-size: 40px;
+    font-style: italic;
+    color: 'white';
+}
+
+.win_snarker {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    color: 'white';
+}
+
+.win_list{
+    font-family: 'Franklin Gothic Light', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    color:rgb(0, 0, 0);
+}
+
+.win_recap{
+    animation: appear 1s ease;
+    animation-fill-mode: forwards;
+    /* color: white; */
+    /* background-color: white; */
+}
+
+.win_intro{
+    animation: snark_3 var(--intro) ;
+    /* font-family: 'Franklin Gothic Light', 'Arial Narrow', Arial, sans-serif; */
+    margin-top: 30px;
+    position: absolute;
+    animation-fill-mode: forwards;
+    /* text-align: center; */
+    font-family: canada-type-gibson, sans-serif;
+}
+
+.win_intro_2{
+    animation: snark_3 var(--intro);
+    font-family: 'Franklin Gothic Light', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+    animation-fill-mode: forwards;
+}
+
+
+
+.word {
+    /* margin: auto; */
+    color: rgb(0, 0, 0);
+    font: 700 normal 7.5em 'tahoma';
+    text-shadow: 5px 2px #955cff, 2px 4px #955cff, 3px 5px #955cff;
+    text-align: center;
+    /* vertical-align: middle; */
+    max-width: 55rem;
+    /* height: 100%; */
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0%;
+    }
+
+    /* 16.67% {
+        opacity: 0%;
+    }
+
+    33.33% {
+        opacity: 0%;
+    }
+
+    50% {
+        opacity: 0%;
+    }
+
+    66.67% {
+        opacity: 0%;
+    }
+
+    83.33% {
+    } */
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes snark {
+    0% {
+        font-size: 0;
+    }
+
+    16.67% {
+        font-size: 0;
+    }
+
+    33.33% {
+        font-size: 200px;
+    }
+
+    50% {
+
+        font-size: 200px;
+        opacity: 100;
+    }
+
+    66.67% {
+        font-size: 200px;
+        opacity: 0;
+    }
+
+    83.33% {
+        font-size: 200px;
+    }
+
+    100% {
+        font-size: 200px;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes snark_2 {
+    0% {
+        font-size: 40px;
+    }
+
+    /* 16.67% {
+        font-size: 0;
+    }
+
+    33.33% {
+        font-size: 0;
+    } */
+
+    50% {
+        font-size: 40px;
+        opacity: 100;
+    }
+
+    66.67% {
+        font-size: 40px;
+        opacity: 0;
+    }
+
+    83.33% {
+        font-size: 40px;
+    }
+
+    100% {
+        font-size: 40px;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes snark_3 {
+    0% {
+        opacity: 100;
+    }
+
+
+    50% {
+        opacity: 100;
+    }
+
+    66.67% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+
+/*---------------- JOIN GAME STYLING -------------*/
+
+.onboard_elements{
+    z-index: 5;
+}
+
+.onboard_title{
+   font-family: 'Franklin Gothic Light', 'Arial Narrow', Arial, sans-serif;
+}
+
+.onboard_credits {
+    margin-top: -30px;
+    font-family: 'Franklin Gothic Light', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-size: 30px;
+}
+
+.onboard_text {
+    margin-top: -20px;
+    height: 50px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.join_game {
+    font-family: 'Franklin Gothic Light', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    background-image: url('../../assets/table.png');
+    background-size: cover;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.loading1{
+    animation-name: load1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    height: 150px;
+    
+}
+
+.loading2 {
+    animation-name: load2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    height: 150px;
+    
+}
+
+.loading3 {
+    animation-name: load3;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    height: 150px;
+    
+}
+
+
+@keyframes load1 {
+    0% {
+        height: 100px ;
+    }
+
+    16.67% {
+        height:150px;
+    }
+
+    33.33% {
+        height: 150px;
+    }
+
+    50% {
+        height: 150px;
+    }
+
+    66.67% {
+        height: 100px ;
+    }
+
+    83.33% {
+        height: 100px ;
+    }
+
+    100% {
+        height: 100px ;
+    }
+}
+
+@keyframes load2 {
+    0% {
+        height: 100px;
+    }
+
+    16.67% {
+        height: 100px;
+    }
+
+    33.33% {
+        height: 150px;
+    }
+
+    50% {
+        height: 150px;
+    }
+
+    66.67% {
+        height: 150px;
+    }
+
+    83.33% {
+        height: 100px;
+    }
+
+    100% {
+        height: 100px;
+    }
+}
+
+@keyframes load3 {
+    0% {
+        height: 100px;
+    }
+
+    16.67% {
+        height: 100px;
+    }
+
+    33.33% {
+        height: 100px;
+    }
+
+    50% {
+        height: 150px;
+    }
+
+    66.67% {
+        height: 150px;
+    }
+
+    83.33% {
+        height: 150px;
+    }
+
+    100% {
+        height: 100px;
+    }
+}
+
+/* --------------- SNARK RULES -------------*/
+
+.overlay{
+    z-index: 15;
+    position: absolute;
+    background-color: black;
+    opacity: 50%;
+    /* pointer-events: none; */
+}
+
+.snark_rule{
+    margin-top: -40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    /* color: white; */
+    font-size: 17px;
+    padding: 15px;
+    /* opacity: 50%; */
+}

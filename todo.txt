@@ -1,0 +1,58 @@
+to do:
+
+    (done)
+    -refresh behavior in lobby (logout one)
+    -fix win pop up  
+    -add my name to home screen
+    -fix placeholder sizes
+    -unique id system
+    -add logo + tab name
+    -remove testing compromises (build piles + snark)
+    -check if less than 3 or more than 7 players
+    -some last debugging
+    -add my name to join room component
+    -change max num players to 7
+
+-fix alerts
+-publish on fire base
+
+// window.alert = function () { };
+
+
+giving up on:
+-fix logout alerts (getting alerts from players after leaving room)
+
+Next goals:
+
+- make game UI more flexible to varied window sizes
+- be able to switch game layout for wrist wellness
+- highlight middle deck with last contributing player color
+
+Stretch goals:
+-Authentification
+-Long running games
+-Unlocking themes
+-Buying card decks
+
+Bugs:
+
+
+-----------------------------------------------------------
+DONE:
+
+- upgrade socket version 
+        (NOTE: branch v3 has old socket version (2.7 ish)
+               branch v4 has updated socket)
+- upgrade cookies version
+- Fix cookie error on reload
+- Display player names and game states in Game ui
+- fix selection UI
+- fix last 3 draw display
+- write flag down function
+- change flag hover UI and flag active UI
+- write snark rules
+- save gameId and check gameId in server client communications
+- Fix card selection ui
+- Make more Game art (oppponent cards, draw pile mat)
+
+- make sure all joining players are seen
