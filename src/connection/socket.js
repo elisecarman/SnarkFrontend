@@ -1,6 +1,7 @@
 import io from 'socket.io-client'
 
-const URL = 'http://localhost:8000'
+// const URL = 'http://localhost:8000'
+const URL = 'https://snarkbackend-ruf1-dev.fl0.io/'
 
 const socket = io(URL)
 

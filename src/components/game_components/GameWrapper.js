@@ -30,7 +30,9 @@ class GameWrapper extends Component {
     cookies = new Cookies();
     socket = require('../../connection/socket').socket
     gameid = this.props.params.gameid;
-    domainName = 'http://localhost:3000'
+    // domainName = 'http://localhost:3000'
+    domainName = 'http://elisecarman.github.io/SnarkFrontend'
+
 
     setGameStarted = (bool) => {
         let state = this.state;
