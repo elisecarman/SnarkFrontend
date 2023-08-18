@@ -1,7 +1,7 @@
 {
   "name": "snark",
   "version": "0.1.0",
-  "homepage": "https://elisecarman.github.io/SnarkFrontend",
+  "homepage": "https://elisecarman.github.io/SnarkFrontend/",
   "private": false,
   "dependencies": {
     "@chakra-ui/icons": "^2.1.0",
