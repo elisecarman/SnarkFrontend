@@ -135,6 +135,10 @@ class GameWrapper extends Component {
                 }
             })
 
+            this.socket.on('hi', (idData) => {
+                console.log("hi");
+            })
+
             this.socket.on('new player', (idData) => {
                 console.log('new player');
                 if ((idData.gameId === this.gameid) && (idData.userName !== "")) {
@@ -368,6 +372,14 @@ class GameWrapper extends Component {
                                             :
                                             <></>
                                             }
+                                        </Box>
+                                        <Box>
+                                            <Button
+                                                onClick={() => { this.socket.emit("hi", this.gameid) }}
+                                                style={{ width: "120px", height: "40px" }}
+                                            >
+                                                hi :D
+                                            </Button>
                                         </Box>
                                         <Box >
                                             <IconButton
