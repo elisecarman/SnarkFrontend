@@ -136,10 +136,10 @@ class GameWrapper extends Component {
             })
 
             this.socket.on('new player', (idData) => {
+                console.log('new player');
                 if ((idData.gameId === this.gameid) && (idData.userName !== "")) {
 
                     // let p_arr = this.cookies.get('playerArr');
-
                     if ((idData.id in (this.state.playerArr) === false) &&
                         (idData.id === this.state.id) &&
                         (this.props.isCreator)) {
