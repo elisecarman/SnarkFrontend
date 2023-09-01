@@ -30,8 +30,8 @@ class GameWrapper extends Component {
     cookies = new Cookies();
     socket = require('../../connection/socket').socket
     gameid = this.props.params.gameid;
-    // domainName = 'http://localhost:3000/SnarkFrontend'
-    domainName = 'http://elisecarman.github.io/SnarkFrontend'
+    domainName = 'http://localhost:3000/SnarkFrontend'
+    // domainName = 'http://elisecarman.github.io/SnarkFrontend'
 
 
     setGameStarted = (bool) => {
@@ -294,7 +294,8 @@ class GameWrapper extends Component {
                                                 }}
                                                 color='white'
                                                 onChange={() => { }}
-                                                value={this.domainName + "/game/" + this.gameid}
+                                                // value={this.domainName + "/game/" + this.gameid}
+                                                value={this.gameid}
                                                 type="text"
                                                 className={classes.onboard_title}
                                                 height='20px'>

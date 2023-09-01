@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navigate, Routes, Route } from 'react-router-dom'
-import { Image, HStack, Box, Input, Button, Spacer, VStack} from '@chakra-ui/react'
+import { Image, HStack, Box, Input, Button, Spacer, VStack, Stack} from '@chakra-ui/react'
 import table from "../assets/table.png"
 import jack from "../assets/clubs/club11.png"
 
@@ -18,13 +18,18 @@ class CreateNewGame extends React.Component {
     state = {
         didGetUserName: false,
         inputText: "",
-        gameId: ""
+        gameId: "",
+        createGame: false,
+        joinGame: false,
+        joinedGame: false
+
     }
     cookies = new Cookies();
 
     constructor(props) {
         super(props);
         this.textArea = React.createRef();
+        this.idArea = React.createRef();
     }
     
     send = () => {
@@ -56,6 +61,17 @@ class CreateNewGame extends React.Component {
 
     }
 
+    typingGameId = () => {
+        // grab the input text from the field from the DOM 
+        const typedId = this.idArea.current.value
+
+        // set the state with that text
+        this.setState({
+            gameId: typedId
+        })
+
+    }
+
     render() {
         // !!! TODO: edit this later once you have bought your own domain. 
         const cookies = new Cookies;
@@ -64,9 +80,13 @@ class CreateNewGame extends React.Component {
 
         return (<React.Fragment>
             {
+            this.state.joinedGame ?
+
+            <Navigate to={"/SnarkFrontend/game/" + this.state.gameId}></Navigate>
+
+            :
                 // this.state.didGetUserName ? 
                 username !== undefined?
-
                 <Navigate to = 
                 {"/SnarkFrontend/game/" + this.state.gameId}></Navigate>
             
@@ -98,47 +118,69 @@ class CreateNewGame extends React.Component {
                     </div>
                     <HStack>
                         <Spacer/>
+                        <VStack backgroundColor={'black'} borderRadius={'15px'} padding={'20px'}>
+                                    <Input style={{ width: "240px", marginTop: "60px", border: '2px', borderColor: 'red' }}
+                                        ref={this.idArea}
+                                        onInput={this.typingGameId}
+                                        placeholder='Game ID'
+                                        textAlign={'center'}
+                                        alignContent={'center'}
+                                        _focus={true}
+                                        variant='outline'
+                                        _placeholder={{ opacity: 1, color: 'gray.500' }}>
+                                    </Input>
 
-                        <Box>
-                            <VStack>
-                    <div className={classes.onboard_text}>
-                        {/* Create a game! */}
-                    </div>
-                    <Input style={{ width: "240px", marginTop: "60px", border: '2px'}} 
-                           ref = {this.textArea}
-                           onInput = {this.typingUserName}
-                            placeholder='Your username'
-                            textAlign={'center'}
-                            alignContent={'center'}
-                            _focus={true}
-                           variant = 'outline'
-                            _placeholder={{ opacity: 1, color: 'gray.500' }}></Input>
                                     <Button className="btn btn-primary"
                                         style={{ width: "120px", marginTop: "32px" }}
-                                        disabled={!(this.state.inputText.length > 0)}
+                                        disabled={!(this.state.gameId.length > 0)}
                                         onClick={() => {
-                                            // When the 'Submit' Button gets pressed from the username screen,
-                                            // We should send a request to the server to create a new room with
-                                            // the uuid we generate here.
-                                            this.props.didRedirect()
-                                            this.props.setUserName(this.state.inputText);
-                                            cookies.set("username", this.state.inputText, { path: '/' });
-                                            this.setState({
-                                                didGetUserName: true
+                                           this.setState({
+                                                joinedGame: true
                                             })
-                                            this.send()
                                         }}>Submit</Button>
-                                    </VStack>
-                                </Box>
-                                <Image 
-                                src={jack}
-                                height= '200px'
-                                transform= 'rotate(20deg)'
-                                marginLeft='40px'
-                                zIndex={10}
-                                ></Image>
-                                <Spacer />
-                            </HStack>
+                        </VStack>
+                        <Box>
+
+                        <VStack>
+                        <div className={classes.onboard_text}>
+                            {/* Create a game! */}
+                        </div>
+                
+                        <Input style={{ width: "240px", marginTop: "60px", border: '2px'}} 
+                        ref = {this.textArea}
+                        onInput = {this.typingUserName}
+                        placeholder='Your username'
+                        textAlign={'center'}
+                        alignContent={'center'}
+                        _focus={true}
+                        variant = 'outline'
+                        _placeholder={{ opacity: 1, color: 'gray.500' }}></Input>
+                            <Button className="btn btn-primary"
+                                style={{ width: "120px", marginTop: "32px" }}
+                                disabled={!(this.state.inputText.length > 0)}
+                                onClick={() => {
+                                    // When the 'Submit' Button gets pressed from the username screen,
+                                    // We should send a request to the server to create a new room with
+                                    // the uuid we generate here.
+                                    this.props.didRedirect()
+                                    this.props.setUserName(this.state.inputText);
+                                    cookies.set("username", this.state.inputText, { path: '/' });
+                                    this.setState({
+                                        didGetUserName: true
+                                    })
+                                    this.send()
+                                }}>Submit</Button>
+                        </VStack>
+                        </Box>
+                        <Image 
+                        src={jack}
+                        height= '200px'
+                        transform= 'rotate(20deg)'
+                        marginLeft='40px'
+                        zIndex={10}
+                        ></Image>
+                        <Spacer />
+                    </HStack>
                        
                 </div>
                 </div>
