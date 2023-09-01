@@ -30,7 +30,7 @@ class GameWrapper extends Component {
     cookies = new Cookies();
     socket = require('../../connection/socket').socket
     gameid = this.props.params.gameid;
-    // domainName = 'http://localhost:3000'
+    // domainName = 'http://localhost:3000/SnarkFrontend'
     domainName = 'http://elisecarman.github.io/SnarkFrontend'
 
 
@@ -261,7 +261,7 @@ class GameWrapper extends Component {
                 </>
             ) : this.state.loggedOut ? (
                 <>
-                    <Navigate to="/"></Navigate>
+                    <Navigate to="/SnarkFrontend/"></Navigate>
                 </>
             ) : (
                 <div >

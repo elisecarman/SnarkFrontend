@@ -1036,7 +1036,7 @@ export default class Game extends Component {
             {/* //! TO DO: move to Game Wrapper */}
             { (this.props.loggedOut === true) ?
             <div>
-                <Navigate to="/"></Navigate>
+                <Navigate to="/SnarkFrontend/"></Navigate>
             </div>
             :
             <div  >

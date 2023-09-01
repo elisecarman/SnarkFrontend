@@ -68,7 +68,7 @@ class CreateNewGame extends React.Component {
                 username !== undefined?
 
                 <Navigate to = 
-                {"/game/" + this.state.gameId}></Navigate>
+                {"/SnarkFrontend/game/" + this.state.gameId}></Navigate>
             
             :
                 <div>

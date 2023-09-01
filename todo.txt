@@ -18,6 +18,9 @@ to do:
 
 // window.alert = function () { };
 
+  // "homepage": "https://elisecarman.github.io/SnarkFrontend/",
+
+
 
 giving up on:
 -fix logout alerts (getting alerts from players after leaving room)
