@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navigate, Routes, Route } from 'react-router-dom'
-import { Image, HStack, Box, Input, Button, Spacer, VStack, Stack} from '@chakra-ui/react'
+import { Image, HStack, Box, Input, Button, Spacer, VStack, Stack, GridItem, Grid} from '@chakra-ui/react'
 import table from "../assets/table.png"
 import jack from "../assets/clubs/club11.png"
 
@@ -19,8 +19,7 @@ class CreateNewGame extends React.Component {
         didGetUserName: false,
         inputText: "",
         gameId: "",
-        createGame: false,
-        joinGame: false,
+        createGame: true,
         joinedGame: false
 
     }
@@ -116,16 +115,74 @@ class CreateNewGame extends React.Component {
                         </Box>
                         </HStack>
                     </div>
-                    <HStack>
+                    <HStack marginBottom={'8px'}>
                         <Spacer/>
-                        <VStack backgroundColor={'black'} borderRadius={'15px'} padding={'20px'}>
+                                   
+                        <Button style={{ width: "60px"}}
+                                        backgroundColor={this.state.createGame ? '#e1e8ed' : '#f7f9fa'}
+                        _active={true}
+                        _focus={true}
+                        onClick={() =>
+                            {console.log("beep");
+                            this.setState({createGame : true});}
+                        }
+                        >Create</Button>
+                        <div>or</div>
+                        <Button style={{ width: "60px"}}
+                                        backgroundColor={this.state.createGame ? '#f7f9fa' : '#e1e8ed'}
+                        onClick={()=>{
+                            this.setState({ createGame: false })}}
+                        _active={false}
+                        >Join</Button>
+                        <Spacer />
+                    </HStack>
+
+                    {/* <Grid
+                        templateColumns='repeat(7, 1fr)'
+                        gap={0}
+                        marginTop={0}>
+                        <GridItem colSpan={3}/>
+                        <GridItem colSpan={1}>
+                        {this.state.createGame ?
+                            <Box>
+                                <VStack >
+
+                                    <Input style={{ width: "240px", marginTop: "60px", border: '2px' }}
+                                        ref={this.textArea}
+                                        onInput={this.typingUserName}
+                                        placeholder='Your username'
+                                        textAlign={'center'}
+                                        alignContent={'center'}
+                                        // _focus={true}
+                                        variant='outline'
+                                        _placeholder={{ opacity: 1, color: 'gray.500' }}></Input>
+                                    <Button className="btn btn-primary"
+                                        style={{ width: "120px", marginTop: "32px" }}
+                                        disabled={!(this.state.inputText.length > 0)}
+                                        onClick={() => {
+                                            // When the 'Submit' Button gets pressed from the username screen,
+                                            // We should send a request to the server to create a new room with
+                                            // the uuid we generate here.
+                                            this.props.didRedirect()
+                                            this.props.setUserName(this.state.inputText);
+                                            cookies.set("username", this.state.inputText, { path: '/' });
+                                            this.setState({
+                                                didGetUserName: true
+                                            })
+                                            this.send()
+                                        }}>Create Game</Button>
+                                </VStack>
+                            </Box>
+                            :
+                            <Box>
+                                <VStack >
                                     <Input style={{ width: "240px", marginTop: "60px", border: '2px', borderColor: 'red' }}
                                         ref={this.idArea}
                                         onInput={this.typingGameId}
                                         placeholder='Game ID'
                                         textAlign={'center'}
                                         alignContent={'center'}
-                                        _focus={true}
+                                        // _focus={true}
                                         variant='outline'
                                         _placeholder={{ opacity: 1, color: 'gray.500' }}>
                                     </Input>
@@ -134,51 +191,103 @@ class CreateNewGame extends React.Component {
                                         style={{ width: "120px", marginTop: "32px" }}
                                         disabled={!(this.state.gameId.length > 0)}
                                         onClick={() => {
-                                           this.setState({
+                                            this.setState({
                                                 joinedGame: true
                                             })
-                                        }}>Submit</Button>
-                        </VStack>
-                        <Box>
+                                        }}>Join Game</Button>
+                                </VStack>
+                            </Box>}
+                        </GridItem>
+                        <GridItem colSpan={1}>
+                            <Image
+                                // marginRight={'-40px'}
+                                src={jack}
+                                height='200px'
+                                transform='rotate(20deg)'
+                                // marginLeft={vh/5 * 3}
+                                zIndex={10}
+                            ></Image>
+                        </GridItem>
+                        <GridItem colSpan={2} />
+                        
+                    </Grid> */}
 
-                        <VStack>
-                        <div className={classes.onboard_text}>
-                            {/* Create a game! */}
-                        </div>
-                
-                        <Input style={{ width: "240px", marginTop: "60px", border: '2px'}} 
-                        ref = {this.textArea}
-                        onInput = {this.typingUserName}
-                        placeholder='Your username'
-                        textAlign={'center'}
-                        alignContent={'center'}
-                        _focus={true}
-                        variant = 'outline'
-                        _placeholder={{ opacity: 1, color: 'gray.500' }}></Input>
-                            <Button className="btn btn-primary"
-                                style={{ width: "120px", marginTop: "32px" }}
-                                disabled={!(this.state.inputText.length > 0)}
-                                onClick={() => {
-                                    // When the 'Submit' Button gets pressed from the username screen,
-                                    // We should send a request to the server to create a new room with
-                                    // the uuid we generate here.
-                                    this.props.didRedirect()
-                                    this.props.setUserName(this.state.inputText);
-                                    cookies.set("username", this.state.inputText, { path: '/' });
-                                    this.setState({
-                                        didGetUserName: true
-                                    })
-                                    this.send()
-                                }}>Submit</Button>
-                        </VStack>
+                    <HStack>
+                        <Spacer/>
+                        {
+                        this.state.createGame ?
+                        <Box>
+                                <VStack >
+                                
+                                <Input style={{ width: "240px", marginTop: "60px", border: '2px' }}
+                                    ref={this.textArea}
+                                    onInput={this.typingUserName}
+                                    placeholder='Your username'
+                                    textAlign={'center'}
+                                    alignContent={'center'}
+                                    // _focus={true}
+                                    variant='outline'
+                                    _placeholder={{ opacity: 1, color: 'gray.500' }}></Input>
+                                <Button className="btn btn-primary"
+                                    style={{ width: "120px", marginTop: "32px" }}
+                                    disabled={!(this.state.inputText.length > 0)}
+                                    onClick={() => {
+                                        // When the 'Submit' Button gets pressed from the username screen,
+                                        // We should send a request to the server to create a new room with
+                                        // the uuid we generate here.
+                                        this.props.didRedirect()
+                                        this.props.setUserName(this.state.inputText);
+                                        cookies.set("username", this.state.inputText, { path: '/' });
+                                        this.setState({
+                                            didGetUserName: true
+                                        })
+                                        this.send()
+                                    }}>Create Game</Button>
+                            </VStack>
                         </Box>
+                        :
+                        <Box>
+                            <VStack >
+                                <Input style={{ width: "240px", marginTop: "60px", border: '2px', borderColor: 'red' }}
+                                    ref={this.idArea}
+                                    onInput={this.typingGameId}
+                                    placeholder='Game ID'
+                                    textAlign={'center'}
+                                    alignContent={'center'}
+                                    // _focus={true}
+                                    variant='outline'
+                                    _placeholder={{ opacity: 1, color: 'gray.500' }}>
+                                </Input>
+
+                                <Button className="btn btn-primary"
+                                    style={{ width: "120px", marginTop: "32px" }}
+                                    disabled={!(this.state.gameId.length > 0)}
+                                    onClick={() => {
+                                        this.setState({
+                                            joinedGame: true
+                                        })
+                                    }}>Join Game</Button>
+                            </VStack>
+                        </Box>
+                        }
+                        
+                        <HStack
+                            style ={{position: 'absolute'}}
+                            className={classes.onboard_jack}
+                            width='100%'
+
+                        >
+                        <Spacer/>
+                        <div style={{width: '420px'}} />
                         <Image 
                         src={jack}
                         height= '200px'
                         transform= 'rotate(20deg)'
-                        marginLeft='40px'
+                        className={classes.onboard_jack}
                         zIndex={10}
                         ></Image>
+                        <Spacer />
+                        </HStack>
                         <Spacer />
                     </HStack>
                        
