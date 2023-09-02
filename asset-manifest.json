@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SnarkFrontend/static/css/main.a9b6df55.css",
-    "main.js": "/SnarkFrontend/static/js/main.71eb88ec.js",
+    "main.css": "/SnarkFrontend/static/css/main.7fd58a47.css",
+    "main.js": "/SnarkFrontend/static/js/main.58c83dba.js",
     "static/js/787.06354159.chunk.js": "/SnarkFrontend/static/js/787.06354159.chunk.js",
     "static/media/mat.png": "/SnarkFrontend/static/media/mat.94ac9282e0102ab973b5.png",
     "static/media/table.png": "/SnarkFrontend/static/media/table.70e2cdf1785b46fc9fe4.png",
@@ -116,12 +116,12 @@
     "static/media/h4.PNG": "/SnarkFrontend/static/media/h4.8431d4d416424434bd9c.PNG",
     "static/media/h7.PNG": "/SnarkFrontend/static/media/h7.9caf8ac46b7d4a4aa90b.PNG",
     "index.html": "/SnarkFrontend/index.html",
-    "main.a9b6df55.css.map": "/SnarkFrontend/static/css/main.a9b6df55.css.map",
-    "main.71eb88ec.js.map": "/SnarkFrontend/static/js/main.71eb88ec.js.map",
+    "main.7fd58a47.css.map": "/SnarkFrontend/static/css/main.7fd58a47.css.map",
+    "main.58c83dba.js.map": "/SnarkFrontend/static/js/main.58c83dba.js.map",
     "787.06354159.chunk.js.map": "/SnarkFrontend/static/js/787.06354159.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9b6df55.css",
-    "static/js/main.71eb88ec.js"
+    "static/css/main.7fd58a47.css",
+    "static/js/main.58c83dba.js"
   ]
 }
