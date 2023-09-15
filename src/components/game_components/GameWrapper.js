@@ -30,9 +30,7 @@ class GameWrapper extends Component {
     cookies = new Cookies();
     socket = require('../../connection/socket').socket
     gameid = this.props.params.gameid;
-    domainName = 'http://localhost:3000/SnarkFrontend'
-    // domainName = 'http://elisecarman.github.io/SnarkFrontend'
-
+    
 
     setGameStarted = (bool) => {
         let state = this.state;
@@ -265,7 +263,8 @@ class GameWrapper extends Component {
                 </>
             ) : this.state.loggedOut ? (
                 <>
-                    <Navigate to="/SnarkFrontend/"></Navigate>
+                    {/* DOMAIN */}
+                    <Navigate to="/"></Navigate>
                 </>
             ) : (
                 <div >
@@ -298,7 +297,6 @@ class GameWrapper extends Component {
                                                 }}
                                                 color='white'
                                                 onChange={() => { }}
-                                                // value={this.domainName + "/game/" + this.gameid}
                                                 value={this.gameid}
                                                 type="text"
                                                 className={classes.onboard_title}
@@ -314,6 +312,7 @@ class GameWrapper extends Component {
                         <Box width='60px' />
                         <Box alignItems={'end'} marginTop={'-100px'}>
                             <VStack height={'100%'} alignItems={'start'}>
+                                
                                 <Box>
                                     <h1
                                         className={classes.onboard_title}

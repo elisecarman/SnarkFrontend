@@ -78,16 +78,17 @@ class CreateNewGame extends React.Component {
         const gameId = parseInt(cookies.get("gameId"));
 
         return (<React.Fragment>
+            {/* DOMAIN x 2*/}
             {
             this.state.joinedGame ?
 
-            <Navigate to={"/SnarkFrontend/game/" + this.state.gameId}></Navigate>
+            <Navigate to={"/game/" + this.state.gameId}></Navigate>
 
             :
                 // this.state.didGetUserName ? 
                 username !== undefined?
                 <Navigate to = 
-                {"/SnarkFrontend/game/" + this.state.gameId}></Navigate>
+                {"/game/" + this.state.gameId}></Navigate>
             
             :
                 <div>

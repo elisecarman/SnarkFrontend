@@ -572,7 +572,6 @@ export default class Game extends Component {
                     cookies.set('scores', JSON.stringify(state2.scores), {path: '/'})
                     this.setState(state2);
 
-                    //! TO DO: change such that state.scores + 1 = actual number of players
                     if (Object.keys(state2.scores).length === (Object.keys(state2.players).length + 1)){
                         socket.emit('score final', {
                             scores: state2.scores, 
@@ -707,6 +706,7 @@ export default class Game extends Component {
         }
 
         if (old_deck === "snarkList"){
+            //! TESTING COMPROMISE
             if (state[old_deck].length === 0){
                 socket.emit("snark win", { 
                     snarker: this.props.myUserName,
@@ -1033,10 +1033,10 @@ export default class Game extends Component {
                 closeWin={this.closeWin}
             />
             
-            {/* //! TO DO: move to Game Wrapper */}
             { (this.props.loggedOut === true) ?
             <div>
-                <Navigate to="/SnarkFrontend/"></Navigate>
+                {/* DOMAIN */}
+                <Navigate to="/"></Navigate>
             </div>
             :
             <div  >

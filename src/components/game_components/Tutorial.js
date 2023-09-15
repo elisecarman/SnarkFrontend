@@ -494,7 +494,7 @@ class Tutorial extends Component {
                 || target.color === arrow.color
                 //|| target.deck === arrow.deck
                 //! TESTING COMPROMISE
-                // || target.number !== arrow.number + 1
+                || target.number !== arrow.number + 1
             ) {
                 this.cancelSelection();
             } else {
@@ -522,7 +522,6 @@ class Tutorial extends Component {
             var target = this.readCard(this.state["middleList"][deck][this.state["middleList"][deck].length - 1]);
             var arrow = this.readCard(this.state.selected[0]);
 
-            //! TESTING COMPROMISE
             if ((target.suit === arrow.suit
                 && target.number === arrow.number - 1)) {
                 this.confirmSelection("middleList", deck);

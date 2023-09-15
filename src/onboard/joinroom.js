@@ -114,18 +114,6 @@ class JoinRoom extends React.Component {
 
                                             cookies.set("username", this.state.inputText, { path: '/' });
                                     }}>Submit</Button>
-                                    {/* <Button
-                                        marginTop='32px'
-                                        colorScheme="red"
-                                        isRound={true}
-                                        variant={'outline'}
-                                        icon={<CloseIcon />}
-                                        onClick={() => {
-                                            <Navigate to="/SnarkFrontend/"></Navigate>
-                                        }}
-                                    >
-                                        nvm
-                                    </Button>     */}
                                     </HStack>
                                 </VStack>
                             </Box>

@@ -65,16 +65,18 @@ function App() {
   }
 
   const isCreator = cookies.get("isCreator") !== undefined
-  const repoName = "SnarkFrontend"
+  
 
   return (
     <ChakraProvider>
       <ColorContext.Provider value={{ didRedirect: didRedirect, playerDidRedirect: playerDidRedirect, playerDidNotRedirect: playerDidNotRedirect }}>
         <Router>
           <Routes>
-            <Route path="/SnarkFrontend/" exact element={<Onboard setUserName={setUserName} />}>
+            {/* DOMAIN */}
+            <Route path="/" exact element={<Onboard setUserName={setUserName} />}>
             </Route>
-            <Route path="/SnarkFrontend/game/:gameid" exact element ={
+            {/* DOMAIN */}
+            <Route path="/game/:gameid" exact element ={
               isCreator ?
                 <React.Fragment>
                   <JoinGame userName={userName} isCreator={true} />
@@ -85,7 +87,8 @@ function App() {
                 <JoinRoom />
             }>
             </Route>
-            <Route render={() => <Navigate to="/SnarkFrontend/" />} />
+            {/* DOMAIN */}
+            <Route render={() => <Navigate to="/" />} />
           </Routes>
         </Router>
       </ColorContext.Provider>
