@@ -1,20 +1,29 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: "/src/index.js",
-    output: {
-        path: path.join(__dirname, 'public'),
-        filename: 'bundle.js'
-    },
     module: {
-        rules: [{
-            loader: 'babel-loader',
-            test: '/\.(js|jsx)$/',
-            exclude: /node_modules/
-        }]
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: "html-loader"
+                    }
+                ]
+            }
+        ]
     },
-    devtool: 'cheap-module-eval-source-map',
-    devServer: {
-        contentBase: path.join(__dirname, 'public')
-    }
+    plugins: [
+        new HtmlWebPackPlugin({
+            template: "./public/index.html",
+            filename: "./index.html"
+        })
+    ]
 };
