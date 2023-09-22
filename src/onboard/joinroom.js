@@ -17,8 +17,11 @@ import { Navigate } from 'react-router-dom';
 class JoinRoom extends React.Component {
     state = {
         didGetUserName: false,
-        inputText: ""
+        inputText: "",
+        redirect: false
     }
+
+    cookies = new Cookies();
 
     constructor(props) {
         super(props);
@@ -36,17 +39,52 @@ class JoinRoom extends React.Component {
             inputText: typedText
         })
     }
-    
+
+    componentDidMount = () => {
+        const joined = this.cookies.get('joined');
+        if (joined !== undefined) {
+            console.log("window close logout");
+            this.cookies.remove("username", { path: '/' });
+            this.cookies.remove("buildList_1", { path: '/' });
+            this.cookies.remove("buildList_2", { path: '/' });
+            this.cookies.remove("buildList_3", { path: '/' });
+            this.cookies.remove("buildList_4", { path: '/' });
+            this.cookies.remove("snarkList", { path: '/' });
+            this.cookies.remove("drawList", { path: '/' });
+            this.cookies.remove("middleList", { path: '/' });
+            this.cookies.remove("draw_index", { path: '/' });
+            this.cookies.remove("score", { path: '/' });
+            this.cookies.remove("last_3_draw", { path: '/' });
+            this.cookies.remove("shuffled", { path: '/' });
+            this.cookies.remove("mounted", { path: '/' });
+            this.cookies.remove("gameStarted", { path: '/' })
+            this.cookies.remove("isCreator", { path: '/' });
+            this.cookies.remove("gameId", { path: '/' });
+            this.cookies.remove("players", { path: '/' });
+            this.cookies.remove("scores", { path: '/' });
+            this.cookies.remove("snarker", { path: '/' });
+            this.cookies.remove("gameOver", { path: '/' });
+            this.cookies.remove("flag", { path: '/' });
+            this.cookies.remove("playerArr", { path: '/' });
+            this.cookies.remove("joined", { path: '/' });
+            this.cookies.remove("id", { path: '/' });
+
+            this.setState({redirect : true})
+        }
+    }
 
     render() {
         const cookies = new Cookies();
-        const username = cookies.get("username");
 
     return (<React.Fragment>
 
 
             {
-                username !== undefined ? 
+                this.state.redirect ?
+                <Navigate to="/"></Navigate>
+                :
+                this.state.didGetUserName ?
+                // username !== undefined ? 
                 <React.Fragment>
                     <JoinGame userName = {this.state.inputText} isCreator = {false}/>
                     <GameWrapper myUserName = {this.state.inputText} isCreator = {false} />
@@ -120,7 +158,7 @@ class JoinRoom extends React.Component {
                                 <HStack
                                     style={{ position: 'absolute' }}
                                     className={classes.onboard_jack}
-                                    width='100%'
+                                    width='99%'
                                 >
                                     <Spacer />
                                     <div style={{ width: '420px' }} />

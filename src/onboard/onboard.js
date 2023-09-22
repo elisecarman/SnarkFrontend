@@ -69,13 +69,44 @@ class CreateNewGame extends React.Component {
             gameId: typedId
         })
 
+        this.cookies.set("gameId", typedId, { path: '/' });
+
+    }
+
+    componentDidMount = () => {
+        const joined = this.cookies.get('joined');
+        if (joined !== undefined){
+            console.log("window close logout");
+            this.cookies.remove("username", { path: '/' });
+            this.cookies.remove("buildList_1", { path: '/' });
+            this.cookies.remove("buildList_2", { path: '/' });
+            this.cookies.remove("buildList_3", { path: '/' });
+            this.cookies.remove("buildList_4", { path: '/' });
+            this.cookies.remove("snarkList", { path: '/' });
+            this.cookies.remove("drawList", { path: '/' });
+            this.cookies.remove("middleList", { path: '/' });
+            this.cookies.remove("draw_index", { path: '/' });
+            this.cookies.remove("score", { path: '/' });
+            this.cookies.remove("last_3_draw", { path: '/' });
+            this.cookies.remove("shuffled", { path: '/' });
+            this.cookies.remove("mounted", { path: '/' });
+            this.cookies.remove("gameStarted", { path: '/' })
+            this.cookies.remove("isCreator", { path: '/' });
+            this.cookies.remove("gameId", { path: '/' });
+            this.cookies.remove("players", { path: '/' });
+            this.cookies.remove("scores", { path: '/' });
+            this.cookies.remove("snarker", { path: '/' });
+            this.cookies.remove("gameOver", { path: '/' });
+            this.cookies.remove("flag", { path: '/' });
+            this.cookies.remove("playerArr", { path: '/' });
+            this.cookies.remove("joined", { path: '/' });
+            this.cookies.remove("id", { path: '/' });
+        }
     }
 
     render() {
         // !!! TODO: edit this later once you have bought your own domain. 
         const cookies = new Cookies;
-        const username = cookies.get("username");
-        const gameId = parseInt(cookies.get("gameId"));
 
         return (<React.Fragment>
             {/* DOMAIN x 2*/}
@@ -85,14 +116,14 @@ class CreateNewGame extends React.Component {
             <Navigate to={"/game/" + this.state.gameId}></Navigate>
 
             :
-                // this.state.didGetUserName ? 
-                username !== undefined?
+                this.state.didGetUserName ? 
+                // username !== undefined?
                 <Navigate to = 
                 {"/game/" + this.state.gameId}></Navigate>
             
             :
-                <div>
-                    <div className={classes.onboard_elements}>
+                <>
+                    {/* <div className={classes.onboard_elements}> */}
                     <div className={classes.onboard_title}>
                     <div style={{fontSize :"120px"}}>Welcome to </div>
                         <HStack>
@@ -137,83 +168,7 @@ class CreateNewGame extends React.Component {
                         >Join</Button>
                         <Spacer />
                     </HStack>
-
-                    {/* <Grid
-                        templateColumns='repeat(7, 1fr)'
-                        gap={0}
-                        marginTop={0}>
-                        <GridItem colSpan={3}/>
-                        <GridItem colSpan={1}>
-                        {this.state.createGame ?
-                            <Box>
-                                <VStack >
-
-                                    <Input style={{ width: "240px", marginTop: "60px", border: '2px' }}
-                                        ref={this.textArea}
-                                        onInput={this.typingUserName}
-                                        placeholder='Your username'
-                                        textAlign={'center'}
-                                        alignContent={'center'}
-                                        // _focus={true}
-                                        variant='outline'
-                                        _placeholder={{ opacity: 1, color: 'gray.500' }}></Input>
-                                    <Button className="btn btn-primary"
-                                        style={{ width: "120px", marginTop: "32px" }}
-                                        disabled={!(this.state.inputText.length > 0)}
-                                        onClick={() => {
-                                            // When the 'Submit' Button gets pressed from the username screen,
-                                            // We should send a request to the server to create a new room with
-                                            // the uuid we generate here.
-                                            this.props.didRedirect()
-                                            this.props.setUserName(this.state.inputText);
-                                            cookies.set("username", this.state.inputText, { path: '/' });
-                                            this.setState({
-                                                didGetUserName: true
-                                            })
-                                            this.send()
-                                        }}>Create Game</Button>
-                                </VStack>
-                            </Box>
-                            :
-                            <Box>
-                                <VStack >
-                                    <Input style={{ width: "240px", marginTop: "60px", border: '2px', borderColor: 'red' }}
-                                        ref={this.idArea}
-                                        onInput={this.typingGameId}
-                                        placeholder='Game ID'
-                                        textAlign={'center'}
-                                        alignContent={'center'}
-                                        // _focus={true}
-                                        variant='outline'
-                                        _placeholder={{ opacity: 1, color: 'gray.500' }}>
-                                    </Input>
-
-                                    <Button className="btn btn-primary"
-                                        style={{ width: "120px", marginTop: "32px" }}
-                                        disabled={!(this.state.gameId.length > 0)}
-                                        onClick={() => {
-                                            this.setState({
-                                                joinedGame: true
-                                            })
-                                        }}>Join Game</Button>
-                                </VStack>
-                            </Box>}
-                        </GridItem>
-                        <GridItem colSpan={1}>
-                            <Image
-                                // marginRight={'-40px'}
-                                src={jack}
-                                height='200px'
-                                transform='rotate(20deg)'
-                                // marginLeft={vh/5 * 3}
-                                zIndex={10}
-                            ></Image>
-                        </GridItem>
-                        <GridItem colSpan={2} />
-                        
-                    </Grid> */}
-
-                    <HStack>
+                    <HStack width = '100%'>
                         <Spacer/>
                         {
                         this.state.createGame ?
@@ -275,8 +230,7 @@ class CreateNewGame extends React.Component {
                         <HStack
                             style ={{position: 'absolute'}}
                             className={classes.onboard_jack}
-                            width='100%'
-
+                            width='99%'
                         >
                         <Spacer/>
                         <div style={{width: '420px'}} />
@@ -292,8 +246,8 @@ class CreateNewGame extends React.Component {
                         <Spacer />
                     </HStack>
                        
-                </div>
-                </div>
+                {/* </div> */}
+                </>
             }
             
             </React.Fragment>)

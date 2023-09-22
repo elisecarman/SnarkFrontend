@@ -83,19 +83,19 @@ import diamond11 from "../../assets/diamonds/diamond11.png"
 import diamond12 from "../../assets/diamonds/diamond12.png"
 import diamond13 from "../../assets/diamonds/diamond13.png"
 
-import h1 from "../../assets/icons/hearts/h1.png"
-import h2 from "../../assets/icons/hearts/h2.png"
-import h3 from "../../assets/icons/hearts/h3.png"
-import h4 from "../../assets/icons/hearts/h4.png"
-import h5 from "../../assets/icons/hearts/h5.png"
-import h6 from "../../assets/icons/hearts/h6.png"
-import h7 from "../../assets/icons/hearts/h7.png"
-import h8 from "../../assets/icons/hearts/h8.png"
-import h9 from "../../assets/icons/hearts/h9.png"
-import h10 from "../../assets/icons/hearts/h10.png"
-import h11 from "../../assets/icons/hearts/h11.png"
-import h12 from "../../assets/icons/hearts/h12.png"
-import h13 from "../../assets/icons/hearts/h13.png"
+import h1 from "../../assets/icons/hearts/h1.PNG"
+import h2 from "../../assets/icons/hearts/h2.PNG"
+import h3 from "../../assets/icons/hearts/h3.PNG"
+import h4 from "../../assets/icons/hearts/h4.PNG"
+import h5 from "../../assets/icons/hearts/h5.PNG"
+import h6 from "../../assets/icons/hearts/h6.PNG"
+import h7 from "../../assets/icons/hearts/h7.PNG"
+import h8 from "../../assets/icons/hearts/h8.PNG"
+import h9 from "../../assets/icons/hearts/h9.PNG"
+import h10 from "../../assets/icons/hearts/h10.PNG"
+import h11 from "../../assets/icons/hearts/h11.PNG"
+import h12 from "../../assets/icons/hearts/h12.PNG"
+import h13 from "../../assets/icons/hearts/h13.PNG"
 
 import d1 from "../../assets/icons/diamonds/d1.png"
 import d2 from "../../assets/icons/diamonds/d2.png"
@@ -424,7 +424,7 @@ export default class Game extends Component {
                 cookies.set("score", 0,  { path: '/' });
                 cookies.set("last_3_draw", false,  { path: '/' });
                 cookies.set("shuffled", true, { path: '/' });
-                cookies.set("gameId", this.props.gameId, { path: '/' });
+                // cookies.set("gameId", this.props.gameId, { path: '/' });
                 cookies.set("flag", false, { path: '/' });
                 //! TESTING: MAX PLAYERS
                 // state.players["Jax"] = {"snarkList": 1,
@@ -1217,7 +1217,7 @@ export default class Game extends Component {
                             clickCard={this.middleClickCard}
                             emptyClickCard={this.emptyMiddleClickCard}
                             middleList={this.state.middleList}
-                            numPlayers={Object.keys(this.props.playerArr).length + 1}
+                            numPlayers={Object.keys(this.props.playerArr).length}
                             readCard={this.readCard}
                             readProp={this.readProp}
                         />

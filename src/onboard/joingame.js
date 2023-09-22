@@ -39,7 +39,6 @@ const JoinGame = (props) => {
      * the 'gameId' is the gameRoom ID. 
      */
     const cookies = new Cookies();
-    // const gameid = parseInt(cookies.get("gameId"));
     const {gameid} = useParams();
 
     let id = cookies.get('id');

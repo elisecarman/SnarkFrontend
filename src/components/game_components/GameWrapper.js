@@ -58,7 +58,6 @@ class GameWrapper extends Component {
 
     exit = () => {
         this.logOut(true);
-
         this.cookies.remove("username", { path: '/' });
         this.cookies.remove("gameStarted", { path: '/' })
         this.cookies.remove("isCreator", { path: '/' });
@@ -69,6 +68,8 @@ class GameWrapper extends Component {
 
         // this.socket.emit('exit', {gameId : this.gameid});
     }
+
+    
 
     componentDidMount(){
         let state = this.state;
@@ -89,6 +90,12 @@ class GameWrapper extends Component {
 
             } else
             {
+            //! REMOVE
+            window.addEventListener('onbeforeunload', (event)=> {
+                event.preventDefault();
+                return event.returnValue = 'Are you sure you want to close?';
+            });
+
             this.socket.on("status", statusUpdate => {
                 console.log(statusUpdate.message)
                 if (statusUpdate.gameId === this.gameid) {
@@ -131,10 +138,6 @@ class GameWrapper extends Component {
                         // this.socket.emit('exit', { gameId: this.gameid });
                     }
                 }
-            })
-
-            this.socket.on('hi', (idData) => {
-                console.log("hi");
             })
 
             this.socket.on('new player', (idData) => {
@@ -240,6 +243,11 @@ class GameWrapper extends Component {
 
     }
 
+    //! REMOVE
+    componentWillUnmount() {
+    window.removeEventListener('onbeforeunload', this.handleWindowClose);
+}
+
   render() {
     
     return (
@@ -279,7 +287,7 @@ class GameWrapper extends Component {
                                         <div
                                             className={classes.join_game}
                                             width='100%'>
-                                            <div style={{ fontSize: '60px' }}>Hi <strong>{this.props.myUserName}</strong>! </div>
+                                            <div style={{ fontSize: '60px', maxWidth: '300px' }}>Hi <strong>{this.props.myUserName}</strong>! </div>
                                             <div style={{ fontSize: '20px' }}>
                                                 <br></br>
                                                 COPY AND PASTE THE URL BELOW
@@ -413,7 +421,7 @@ class GameWrapper extends Component {
                                         <h3
                                             className={classes.onboard_title}
                                             key={index}
-                                            style={{ fontSize: '25px' }}>
+                                            style={{ fontSize: '25px', maxWidth: '200px' }}>
                                             {this.state.playerArr[player]}
                                         </h3>
                                     </Box>
