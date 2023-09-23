@@ -372,14 +372,7 @@ class GameWrapper extends Component {
                                             <></>
                                             }
                                         </Box>
-                                        <Box>
-                                            <Button
-                                                onClick={() => { this.socket.emit("hi", this.gameid) }}
-                                                style={{ width: "120px", height: "40px" }}
-                                            >
-                                                hi :D
-                                            </Button>
-                                        </Box>
+                                        
                                         <Box >
                                             <IconButton
                                                 marginTop='10px'
