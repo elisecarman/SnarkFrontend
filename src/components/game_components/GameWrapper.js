@@ -279,7 +279,7 @@ class GameWrapper extends Component {
                                         <div
                                             className={classes.join_game}
                                             width='100%'>
-                                            <div style={{ fontSize: '60px' }}>Hi <strong>{this.props.myUserName}</strong>! </div>
+                                            <div style={{ fontSize: '60px', maxWidth: '300px' }}>Hi <strong>{this.props.myUserName}</strong>! </div>
                                             <div style={{ fontSize: '20px' }}>
                                                 <br></br>
                                                 COPY AND PASTE THE URL BELOW
@@ -413,7 +413,7 @@ class GameWrapper extends Component {
                                         <h3
                                             className={classes.onboard_title}
                                             key={index}
-                                            style={{ fontSize: '25px' }}>
+                                            style={{ fontSize: '25px', maxWidth: '200px' }}>
                                             {this.state.playerArr[player]}
                                         </h3>
                                     </Box>
