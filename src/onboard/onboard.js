@@ -275,7 +275,7 @@ class CreateNewGame extends React.Component {
                         <HStack
                             style ={{position: 'absolute'}}
                             className={classes.onboard_jack}
-                            width='100%'
+                            width='99%'
 
                         >
                         <Spacer/>
