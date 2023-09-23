@@ -30,6 +30,37 @@ class CreateNewGame extends React.Component {
         this.textArea = React.createRef();
         this.idArea = React.createRef();
     }
+
+    componentDidMount = () => {
+        const joined = this.cookies.get('joined');
+        if (joined !== undefined) {
+            console.log("window close logout");
+            this.cookies.remove("username", { path: '/' });
+            this.cookies.remove("buildList_1", { path: '/' });
+            this.cookies.remove("buildList_2", { path: '/' });
+            this.cookies.remove("buildList_3", { path: '/' });
+            this.cookies.remove("buildList_4", { path: '/' });
+            this.cookies.remove("snarkList", { path: '/' });
+            this.cookies.remove("drawList", { path: '/' });
+            this.cookies.remove("middleList", { path: '/' });
+            this.cookies.remove("draw_index", { path: '/' });
+            this.cookies.remove("score", { path: '/' });
+            this.cookies.remove("last_3_draw", { path: '/' });
+            this.cookies.remove("shuffled", { path: '/' });
+            this.cookies.remove("mounted", { path: '/' });
+            this.cookies.remove("gameStarted", { path: '/' })
+            this.cookies.remove("isCreator", { path: '/' });
+            this.cookies.remove("gameId", { path: '/' });
+            this.cookies.remove("players", { path: '/' });
+            this.cookies.remove("scores", { path: '/' });
+            this.cookies.remove("snarker", { path: '/' });
+            this.cookies.remove("gameOver", { path: '/' });
+            this.cookies.remove("flag", { path: '/' });
+            this.cookies.remove("playerArr", { path: '/' });
+            this.cookies.remove("joined", { path: '/' });
+            this.cookies.remove("id", { path: '/' });
+        }
+    }
     
     send = () => {
         /**
