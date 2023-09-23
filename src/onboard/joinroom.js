@@ -20,6 +20,9 @@ class JoinRoom extends React.Component {
         inputText: ""
     }
 
+    cookies = new Cookies();
+
+
     constructor(props) {
         super(props);
         this.textArea = React.createRef();
@@ -39,8 +42,7 @@ class JoinRoom extends React.Component {
     
 
     render() {
-        const cookies = new Cookies();
-        const username = cookies.get("username");
+        const username = this.cookies.get("username");
 
     return (<React.Fragment>
 
@@ -113,7 +115,7 @@ class JoinRoom extends React.Component {
 
                                             })
 
-                                            cookies.set("username", this.state.inputText, { path: '/' });
+                                            this.cookies.set("username", this.state.inputText, { path: '/' });
                                     }}>Submit</Button>
                                     </HStack>
                                 </VStack>
