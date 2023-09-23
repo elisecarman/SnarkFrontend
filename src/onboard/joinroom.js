@@ -46,7 +46,8 @@ class JoinRoom extends React.Component {
 
 
             {
-                username !== undefined ? 
+                this.state.didGetUserName ?
+                // username !== undefined ? 
                 <React.Fragment>
                     <JoinGame userName = {this.state.inputText} isCreator = {false}/>
                     <GameWrapper myUserName = {this.state.inputText} isCreator = {false} />
