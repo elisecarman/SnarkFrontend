@@ -1217,7 +1217,7 @@ export default class Game extends Component {
                             clickCard={this.middleClickCard}
                             emptyClickCard={this.emptyMiddleClickCard}
                             middleList={this.state.middleList}
-                            numPlayers={Object.keys(this.props.playerArr).length + 1}
+                            numPlayers={Object.keys(this.props.playerArr).length}
                             readCard={this.readCard}
                             readProp={this.readProp}
                         />
