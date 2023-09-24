@@ -9,7 +9,7 @@ function Rules(props) {
     const text = {
         'snark' : 
         <div className={classes.snark_rule}>
-            This is your Snark pile. It start with 10 cards. 
+            This is your snark pile. It starts with 10 cards. 
             For every card in your snark pile, 2 points are substracted from your total score.
             You must get the highest score and prioritize emptying your snark pile!
             The game ends as soon as a player completely empties their snark pile.
@@ -42,7 +42,7 @@ function Rules(props) {
             and directly increasing (i.e. you can place a 10 of clubs on a 9 of clubs).
             You gain a point for each card you successfully place in this space.
             Beware, other players may place their cards before yours! 
-            
+            <br></br>
             Your opponents (here, just Elbow) are displayed above the empty slots. Under their username
             are shown their top snark card (leftmost), and their top build pile cards.
         </div>,
