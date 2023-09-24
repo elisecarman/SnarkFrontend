@@ -282,7 +282,7 @@ class GameWrapper extends Component {
                                             <div style={{ fontSize: '60px', maxWidth: '300px' }}>Hi <strong>{this.props.myUserName}</strong>! </div>
                                             <div style={{ fontSize: '20px' }}>
                                                 <br></br>
-                                                COPY AND PASTE THE URL BELOW
+                                                COPY AND PASTE THE GAME ID BELOW
                                                 <br></br>
                                                 TO SEND TO YOUR FRIENDS
                                                 <br></br>
