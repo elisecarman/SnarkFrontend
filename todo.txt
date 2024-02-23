@@ -1,3 +1,10 @@
+Setup notes:
+switch back to correct node version using 
+nvm use [node version]
+in powershell
+
+current computer node version (not for snark): 20.10.0
+
 to do:
 
     (done)
