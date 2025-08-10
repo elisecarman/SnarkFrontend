@@ -75,19 +75,19 @@ import diamond11 from "../../assets/diamonds/diamond11.png"
 import diamond12 from "../../assets/diamonds/diamond12.png"
 import diamond13 from "../../assets/diamonds/diamond13.png"
 
-import h1 from "../../assets/icons/hearts/h1.PNG"
-import h2 from "../../assets/icons/hearts/h2.PNG"
-import h3 from "../../assets/icons/hearts/h3.PNG"
-import h4 from "../../assets/icons/hearts/h4.PNG"
-import h5 from "../../assets/icons/hearts/h5.PNG"
-import h6 from "../../assets/icons/hearts/h6.PNG"
-import h7 from "../../assets/icons/hearts/h7.PNG"
-import h8 from "../../assets/icons/hearts/h8.PNG"
-import h9 from "../../assets/icons/hearts/h9.PNG"
-import h10 from "../../assets/icons/hearts/h10.PNG"
-import h11 from "../../assets/icons/hearts/h11.PNG"
-import h12 from "../../assets/icons/hearts/h12.PNG"
-import h13 from "../../assets/icons/hearts/h13.PNG"
+import h1 from "../../assets/icons/hearts/h1.png"
+import h2 from "../../assets/icons/hearts/h2.png"
+import h3 from "../../assets/icons/hearts/h3.png"
+import h4 from "../../assets/icons/hearts/h4.png"
+import h5 from "../../assets/icons/hearts/h5.png"
+import h6 from "../../assets/icons/hearts/h6.png"
+import h7 from "../../assets/icons/hearts/h7.png"
+import h8 from "../../assets/icons/hearts/h8.png"
+import h9 from "../../assets/icons/hearts/h9.png"
+import h10 from "../../assets/icons/hearts/h10.png"
+import h11 from "../../assets/icons/hearts/h11.png"
+import h12 from "../../assets/icons/hearts/h12.png"
+import h13 from "../../assets/icons/hearts/h13.png"
 
 const socket = require('../../connection/socket').socket
 
@@ -552,20 +552,23 @@ class Tutorial extends Component {
     render() {
 
         return (
-            <>
+            <div>
                 <div  >
                     <div
                         className={classes.overlay}
                         style={{
                             visibility: this.state.viewRules ? 'visible' : 'hidden',
-                            height: '44rem',
+                            // height: '44rem',
+                            height: '100%',
                             width: '100%'
                         }}
                     ></div>
                     <div
                         className={classes.game_page}
                         style={{
-                            height: '44rem',
+                            // height: '44rem',
+                            minHeight: '100vh',
+                            height: '100%',
                             width: '100%',
                         }}
                     >
@@ -807,7 +810,7 @@ class Tutorial extends Component {
                         </div>
                     </div>
                 </div>
-            </>
+            </div>
         )
     };
 }

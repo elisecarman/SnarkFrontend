@@ -2,8 +2,12 @@
 
 .root{
     --intro: 8s;
+    /* min-height: 100vh; */
 }
+
 .game_page {
+    /* min-height: 100vh; */
+    height: 100%;
     overflow-y: auto;
     background-image: url('../../assets/table.png');
     background-size: cover;
@@ -31,6 +35,7 @@
     /* z-index: 5;
     position: absolute; */
     width: 100%;
+    height: 100%;
 }
 
 .placeholder {

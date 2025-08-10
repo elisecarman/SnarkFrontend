@@ -6,7 +6,6 @@ import { ColorContext } from './context/colorcontext'
 import Onboard from './onboard/onboard'
 import JoinGame from './onboard/joingame'
 import { useState } from 'react';
-import './App.css';
 import Game from './components/game_components/Game';
 import GameWrapper from './components/game_components/GameWrapper';
 import Login from './components/auth/Login';
@@ -15,6 +14,7 @@ import { StreamChat } from 'stream-chat';
 import Cookies from 'universal-cookie';
 import GameManager from './components/auth/GameManager';
 import { ChakraProvider } from '@chakra-ui/react'
+import Tutorial from './components/game_components/Tutorial';
 
 
 function App() {
@@ -85,6 +85,7 @@ function App() {
                 <JoinRoom />
             }>
             </Route>
+            <Route path="/SnarkFrontend/tutorial/" exact element={<div style={{minHeight: '100vh'}}><Tutorial/></div>}></Route>
             <Route render={() => <Navigate to="/SnarkFrontend/" />} />
           </Routes>
         </Router>
