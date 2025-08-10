@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/SnarkFrontend/static/css/main.6400b486.css",
-    "main.js": "/SnarkFrontend/static/js/main.71ae5c4d.js",
+    "main.js": "/SnarkFrontend/static/js/main.4aac21b8.js",
     "static/js/787.06354159.chunk.js": "/SnarkFrontend/static/js/787.06354159.chunk.js",
     "static/media/mat.png": "/SnarkFrontend/static/media/mat.94ac9282e0102ab973b5.png",
     "static/media/table.png": "/SnarkFrontend/static/media/table.70e2cdf1785b46fc9fe4.png",
@@ -115,13 +115,14 @@
     "static/media/h10.png": "/SnarkFrontend/static/media/h10.ba94230697ab8750d320.png",
     "static/media/h4.png": "/SnarkFrontend/static/media/h4.8431d4d416424434bd9c.png",
     "static/media/h7.png": "/SnarkFrontend/static/media/h7.9caf8ac46b7d4a4aa90b.png",
+    "static/media/club1.webp": "/SnarkFrontend/static/media/club1.d81c2f0da8c2250e2452.webp",
     "index.html": "/SnarkFrontend/index.html",
     "main.6400b486.css.map": "/SnarkFrontend/static/css/main.6400b486.css.map",
-    "main.71ae5c4d.js.map": "/SnarkFrontend/static/js/main.71ae5c4d.js.map",
+    "main.4aac21b8.js.map": "/SnarkFrontend/static/js/main.4aac21b8.js.map",
     "787.06354159.chunk.js.map": "/SnarkFrontend/static/js/787.06354159.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6400b486.css",
-    "static/js/main.71ae5c4d.js"
+    "static/js/main.4aac21b8.js"
   ]
 }
