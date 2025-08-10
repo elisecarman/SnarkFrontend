@@ -85,7 +85,7 @@ function App() {
                 <JoinRoom />
             }>
             </Route>
-            <Route path="/SnarkFrontend/tutorial/" exact element={<div style={{minHeight: '100vh'}}><Tutorial/></div>}></Route>
+            <Route path="/SnarkFrontend/tutorial" exact element={<Tutorial/>}></Route>
             <Route render={() => <Navigate to="/SnarkFrontend/" />} />
           </Routes>
         </Router>

@@ -13,7 +13,8 @@ function Card(props) {
                         height="130px"
                         width="80px"
                         >
-                        <Image
+                        <Image 
+                            loading = "lazy"
                             src={props.sprite}
                             height="130px"
                             width="80px"
@@ -28,7 +29,8 @@ function Card(props) {
                         <Box
                             height="130px"
                             width="80px">
-                        <Image
+                        <Image 
+                            loading = "lazy"
                             src={props.sprite}
                             height="130px"
                             width="80px"
@@ -45,7 +47,8 @@ function Card(props) {
                 <Box
                     height="130px"
                     width="80px">
-                <Image
+                <Image 
+                    loading = "lazy"
                     src={back}
                     // border="2px solid white"
                     borderRadius={15}

@@ -199,7 +199,7 @@ class CreateNewGame extends React.Component {
                             </Box>}
                         </GridItem>
                         <GridItem colSpan={1}>
-                            <Image
+                            <Image loading = "lazy"
                                 // marginRight={'-40px'}
                                 src={jack}
                                 height='200px'
@@ -280,6 +280,7 @@ class CreateNewGame extends React.Component {
                         <Spacer/>
                         <div style={{width: '420px'}} />
                         <Image 
+                        loading = "lazy" 
                         src={jack}
                         height= '200px'
                         transform= 'rotate(20deg)'

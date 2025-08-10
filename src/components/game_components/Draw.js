@@ -52,7 +52,8 @@ function Draw(props) {
                             height="130px"
                             width="80px"
                         >
-                        <Image
+                        <Image 
+                            loading = "lazy"
                             height="130px"
                             width="80px"
                             src={back}

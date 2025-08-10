@@ -136,7 +136,8 @@ class JoinRoom extends React.Component {
                                 >
                                     <Spacer />
                                     <div style={{ width: '420px' }} />
-                                    <Image
+                                    <Image 
+                                        loading = "lazy"
                                         src={jack}
                                         height='200px'
                                         transform='rotate(20deg)'
@@ -146,7 +147,7 @@ class JoinRoom extends React.Component {
                                     ></Image>
                                     <Spacer />
                                 </HStack>
-                            {/* <Image
+                            {/* <Image loading = "lazy"
                                 src={jack}
                                 height='200px'
                                 transform='rotate(20deg)'

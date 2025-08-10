@@ -1058,7 +1058,8 @@ export default class Game extends Component {
                     <div className={classes.table_elements}>
                     <HStack alignItems={"start"} marginLeft={5} marginTop={'15px'}>
                         <Box>
-                            <Image
+                            <Image 
+                            loading = "lazy"
                             marginTop={'-12px'}
                             height='60px'
                             width='60px'
@@ -1110,6 +1111,7 @@ export default class Game extends Component {
                             _hover={(this.state.flag === true) ? { bg: "#5c36cf" } : {bg: "#5c36cf" }}
                             >
                             <Image 
+                            loading = "lazy" 
                             src={flag} 
                             >
                             </Image>
@@ -1235,7 +1237,8 @@ export default class Game extends Component {
                         <Box
                         marginTop='-200px'
                         marginRight='20px'>
-                            <Image
+                            <Image 
+                            loading = "lazy"
                             src={candle}
                             height='400px'
                             ></Image>

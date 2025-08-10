@@ -623,7 +623,8 @@ class Tutorial extends Component {
                                         onClick={this.waveFlag}
                                         _hover={(this.state.flag === true) ? { bg: "#5c36cf" } : { bg: "#5c36cf" }}
                                     >
-                                        <Image
+                                        <Image 
+                                            loading = "lazy"
                                             src={flag}
                                         >
                                         </Image>

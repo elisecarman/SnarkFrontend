@@ -89,7 +89,7 @@ return (
                                             backgroundColor={'black'}
                                             color={'white'}
                                             alignItems='center'>
-                                            <Image
+                                            <Image loading = "lazy"
                                                 src={snark}
                                                 height={'90px'}
                                                 minH={'90px'}
@@ -138,7 +138,8 @@ return (
                                                 <div key={index}>
                                                     {(props.scores[player][0] === props.snarker)?
                                                     <>
-                                                        <Image
+                                                        <Image 
+                                                            loading = "lazy"
                                                             src={snark}
                                                             height={'90px'}
                                                             minH={'90px'}

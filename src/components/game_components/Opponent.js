@@ -77,7 +77,7 @@ function Player(props) {
                             marginRight: '15px'
                         }}>
                             {(props.snarkList >= 0) ?
-                                <Image src={props.readCard([props.snarkList]).icon} />
+                                <Image loading = "lazy" src={props.readCard([props.snarkList]).icon} />
                                 :
                                 <></>
                             }
@@ -90,7 +90,7 @@ function Player(props) {
                             borderRadius: '5px'
                         }}>
                             {(props.buildList_1 >= 0) ?
-                                <Image src={props.readCard([props.buildList_1]).icon} />
+                                <Image loading = "lazy" src={props.readCard([props.buildList_1]).icon} />
                                 :
                                 <></>
                             }
@@ -104,7 +104,7 @@ function Player(props) {
                             borderRadius: '5px'
                         }}>
                             {(props.buildList_2 >= 0) ?
-                                <Image src={props.readCard([props.buildList_2]).icon} />
+                                <Image loading = "lazy" src={props.readCard([props.buildList_2]).icon} />
                                 :
                                 <></>
                             }
@@ -118,7 +118,7 @@ function Player(props) {
                             borderRadius: '5px'
                         }}>
                             {(props.buildList_3 >= 0) ?
-                                <Image src={props.readCard([props.buildList_3]).icon} />
+                                <Image loading = "lazy" src={props.readCard([props.buildList_3]).icon} />
                                 :
                                 <></>
                             }
@@ -132,7 +132,7 @@ function Player(props) {
                             borderRadius: '5px'
                         }}>
                             {(props.buildList_4 >= 0) ?
-                                <Image src={props.readCard([props.buildList_4]).icon} />
+                                <Image loading = "lazy" src={props.readCard([props.buildList_4]).icon} />
                                 :
                                 <></>
                             }
@@ -144,7 +144,8 @@ function Player(props) {
             <Box>
                 {
                     (props.flag === true) ?
-                        <Image
+                        <Image 
+                            loading = "lazy"
                             src={flag}
                             width='30px'>
                         </Image>

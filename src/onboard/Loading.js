@@ -14,16 +14,19 @@ function Loading() {
         <HStack alignItems={'end'} height='150px'>
             <div className={classes.loading1}>
                 <Image 
-                height='100px'
-                src={diamond11}/>
+                    loading = "lazy" 
+                    height='100px'
+                    src={diamond11}/>
             </div>
             <div className={classes.loading2}>
-                <Image
+                <Image 
+                    loading = "lazy"
                     height='100px'
                     src={club12} />
             </div>
             <div className={classes.loading3}>
-                <Image
+                <Image 
+                    loading = "lazy"
                     height='100px'
                     src={heart13} />
             </div>
