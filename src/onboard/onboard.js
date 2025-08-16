@@ -2,7 +2,8 @@ import React from 'react'
 import { Navigate, Routes, Route } from 'react-router-dom'
 import { Image, HStack, Box, Input, Button, Spacer, VStack, Stack, GridItem, Grid} from '@chakra-ui/react'
 import table from "../assets/table.png"
-import jack from "../assets/clubs/club11.png"
+import jack from "../assets/cards/clubs/club11.webp"
+
 
 import classes from '../components/styles/game.module.css'
 import uuid from 'uuid/v4'

@@ -341,7 +341,7 @@ class GameWrapper extends Component {
                                                 this.setOpen(true);
                                             }}
                                         >
-                                            snark rules
+                                            Snark Rules
                                         </Button>
                                         <Modal
                                             isOpen={this.state.isOpen}
@@ -366,21 +366,22 @@ class GameWrapper extends Component {
                                                     onClick={() => { this.socket.emit("start", this.gameid) }}
                                                     style={{ width: "120px", height: "40px" }}
                                                 >
-                                                    start game
+                                                    Start Game
                                                 </Button>
                                             </Box>
                                             :
                                             <></>
                                             }
                                         </Box>
-                                        <Box>
+                                        {/* <Box>
                                             <Button
                                                 onClick={() => { this.socket.emit("hi", this.gameid) }}
                                                 style={{ width: "120px", height: "40px" }}
+                                                disabled={true}
                                             >
-                                                hi :D
+                                                Hi
                                             </Button>
-                                        </Box>
+                                        </Box> */}
                                         <Box >
                                             <IconButton
                                                 marginTop='10px'

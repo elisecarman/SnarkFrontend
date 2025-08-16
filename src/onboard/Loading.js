@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, Image, Spacer, HStack} from '@chakra-ui/react'
 
-import diamond11 from "../assets/diamonds/diamond11.png"
-import club12 from "../assets/clubs/club12.png"
-import heart13 from "../assets/hearts/heart13.png"
+import diamond11 from "../assets/cards/diamonds/diamond11.webp"
+import club12 from "../assets/cards/clubs/club12.webp"
+import heart13 from "../assets/cards/hearts/heart13.webp"
 
 import classes from "../components/styles/game.module.css"
 

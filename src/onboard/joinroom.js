@@ -6,7 +6,7 @@ import Cookies from 'universal-cookie';
 import { IconButton, Image, HStack, Box, Input, Button, Spacer, VStack } from '@chakra-ui/react'
 import { CloseIcon } from '@chakra-ui/icons'
 import classes from '../components/styles/game.module.css'
-import jack from "../assets/clubs/club11.png"
+import jack from "../assets/cards/clubs/club11.webp"
 import { Navigate } from 'react-router-dom';
 
 
@@ -142,7 +142,6 @@ class JoinRoom extends React.Component {
                                         height='200px'
                                         transform='rotate(20deg)'
                                         className={classes.onboard_jack}
-
                                         zIndex={10}
                                     ></Image>
                                     <Spacer />

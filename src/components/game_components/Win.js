@@ -21,7 +21,7 @@ import {Modal,
 } from '@chakra-ui/react'
 import { Fade, ScaleFade, Slide, SlideFade, Collapse } from '@chakra-ui/react'
 import classes from '../styles/game.module.css'
-import snarker from "../../assets/clubs/club11.png"
+import snarker from "../../assets/cards/clubs/club11.webp"
 import SnarkAnim from './SnarkAnim'
 import snark from '../../assets/Snark.png'
 

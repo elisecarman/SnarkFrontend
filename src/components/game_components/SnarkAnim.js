@@ -21,7 +21,7 @@ import {
 } from '@chakra-ui/react'
 import { Fade, ScaleFade, Slide, SlideFade, Collapse } from '@chakra-ui/react'
 import classes from '../styles/game.module.css'
-import snarker from "../../assets/clubs/club11.png"
+import snarker from "../../assets/cards/clubs/club11.webp"
 
 function SnarkAnim(props) {
     const [text, setText] = useState("");
